@@ -1,0 +1,6 @@
+@include font-face("NotoSans", "#{$url-font}/NotoSans-Bold/NotoSans-Bold") {
+	font-weight: 700;
+}
+@include font-face("NotoSans", "#{$url-font}/NotoSans-Regular/NotoSans-Regular") {
+	font-weight: 400;
+}

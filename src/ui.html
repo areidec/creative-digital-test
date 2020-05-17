@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Creative-People-UI</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="shortcut icon" href="favicon/favicon.png">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+
+      <div style="display: flex; justify-content: center; margin-bottom: 20px; width: 100%;">
+        <button class="btn btn_rounded btn_orange btn_basic burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <div style="display: flex; justify-content: center; margin-bottom: 20px; width: 100%;">
+        <button class="btn btn_rounded btn_orange btn_small">
+          <img src="assets/img/svg/arrow-left.svg" alt="arr-left">
+        </button>
+        <button class="btn btn_rounded btn_orange btn_small">
+          <img src="assets/img/svg/arrow-right.svg" alt="arr-right">
+        </button>
+      </div>
+
+      <div style="display: flex; justify-content: center; margin-bottom: 20px; width: 100%;">
+        <button class="btn btn_rounded btn_blue btn_basic">
+          <span>En</span>
+        </button>
+      </div>
+
+      <div style="display: flex; justify-content: center; margin-bottom: 20px; width: 100%;">
+        <button class="btn btn_rounded btn_blue btn_basic">
+          <img src="assets/img/svg/phone.svg" alt="phone-ico">
+        </button>
+      </div>
+
+      <div style="display: flex; justify-content: center; margin-bottom: 20px; width: 100%;">
+        <button class="btn btn_linked btn_with-icon btn_linked-ico-bottom">
+          Основная информация
+          <img src="assets/img/svg/arrow-down_long.svg" alt="arr-down-long">
+        </button>
+      </div>
+
+      <div style="display: flex; justify-content: center; margin-bottom: 20px; width: 100%;">
+        <button class="btn btn_linked btn_with-icon btn_linked-ico-center">
+          2019
+          <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L6 6L11 1" stroke="#161515" stroke-width="2"/>
+          </svg>
+        </button>
+      </div>
+
+      <div style="display: flex; justify-content: center; margin-bottom: 20px; width: 100%;">
+        <button class="btn btn_primary btn_orange">загрузить ещё</button>
+      </div>
+
+      <div style="display: flex; justify-content: center; margin-bottom: 20px; width: 100%;">
+        <div class="custom-select select-years">
+          <div class="custom-select__header">
+            <button class="btn btn_linked btn_with-icon btn_linked-ico-center">
+              <div>2019</div>
+              <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L6 6L11 1" stroke="#161515" stroke-width="2"></path>
+              </svg>
+            </button>
+          </div>
+
+          <div class="custom-select__body"></div>
+        </div>
+        
+        <span style="width: 20px;"></span>
+
+        <div class="custom-select select-month">
+          <div class="custom-select__header">
+            <button class="btn btn_linked btn_with-icon btn_linked-ico-center">
+              <div>Все месяцы</div>
+              <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L6 6L11 1" stroke="#161515" stroke-width="2"></path>
+              </svg>
+            </button>
+          </div>
+
+          <div class="custom-select__body"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/libs/jquery-3.2.1.min.js"></script>
+  <script src="js/select.js"></script>
+  <script>
+      const mockYears = ["2019","2018","2017","2016","2015"];
+      const mockMonth = ["Февраль", "Октябрь", "Сентябрь"];
+      
+      let selectYears = new CustomSelect($('.select-years'), mockYears);
+      let selectMonth = new CustomSelect($('.select-month'), mockMonth);
+  </script>
+</body>
+</html>

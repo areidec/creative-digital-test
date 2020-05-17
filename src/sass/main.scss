@@ -1,0 +1,11 @@
+@import "vars"; // Импорт переменных всегда первый
+@import "node_modules/sass-snippets/scss/snippets"; // Импорт снипетов после переменных
+
+@import "fonts"; // Шрифты
+@import "ui"; // Основные элементы
+
+@import "_header";
+@import "_about";
+@import "_appartaments";
+@import "_news";
+@import "_footer";

@@ -1,0 +1,248 @@
+.appartaments {
+  margin-bottom: 120px;
+}
+
+.toggle-appartaments {
+  height: 720px;
+  width: 100%;
+  background-image: url('#{$url-img}/wood.jpg');
+  background-size: cover;
+  display: flex;
+
+  &__part {
+    position: relative;
+    width: 100%;
+    border-right: 1px rgba($color: #ffffff, $alpha: 0.75) solid;
+    border-color: 1px rgba($color: #ffffff, $alpha: 0.75) solid;
+    cursor: pointer;
+    transition: width .7s;
+    overflow: hidden;
+
+    &_short {
+      width: 75px;
+
+      @include media(sm) {
+        height: 70px !important;
+        width: 100%;
+      }
+    }
+
+    &_long {
+      cursor: auto;
+
+      &:hover {
+        &::after {
+          opacity: 0 !important;
+        }
+      }
+
+      @include media(sm) {
+        height: 508px !important;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      opacity: 0;
+      transition: opacity .3s;
+    }
+
+    &:hover {
+      &::after {
+        opacity: .2;
+
+        @include media(sm) {
+          opacity: 0;
+        }
+      }
+    }
+
+    @include media(sm) {
+      height: 179px;
+      border-right: none;
+      border-bottom: 1px rgba($color: #ffffff, $alpha: 0.75) solid;
+      transition: height .7s;
+    }
+
+    @include media(xs) {
+      height: 417px;
+    }
+  }
+
+  &__bottom, &__left, &__content {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    transition: opacity .3s;
+    opacity: 0;
+    z-index: -1;
+
+    &.visible {
+      opacity: 1;
+      z-index: 1;
+
+      @include media(xs) {
+        opacity: 0 !important;
+      }
+    }
+  }
+
+  &__content-cross {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -139px;
+    cursor: pointer;
+
+    @include media(sm) {
+      top: -77px;
+    }
+  }
+
+  &__bottom {
+    bottom: 0;
+
+    @include media(sm) {
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 80px;
+    }
+
+    @include media(xs) {
+      opacity: 0;
+      z-index: -1 !important;
+    }
+  }
+
+  &__left {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-180deg);
+    writing-mode: vertical-rl;
+    width: auto;
+
+    @include media(sm) {
+      transform: translate(-50%, -50%);
+      writing-mode: initial;
+    }
+
+    @include media(xs) {
+      opacity: 0;
+      z-index: -1 !important;
+    }
+  }
+
+  &__content {
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    @include media(xs) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100%;
+      z-index: 1;
+      position: relative;
+      top: auto;
+      left: auto;
+      transform: none;
+      opacity: 1;
+    }
+  }
+
+  &__plus {
+    margin-bottom: 48px;
+
+    @include media(sm) {
+      margin-bottom: 0;
+      order: 2;
+    }
+  }
+  
+  &__title {
+    &_bot {
+      margin-bottom: 10px;
+
+      @include media(sm) {
+        margin-bottom: 0;
+      }
+    }
+
+    &_content {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__title-2 {
+    text-transform: uppercase;
+
+    &_bot {
+      margin-bottom: 82px;
+
+      @include media(sm) {
+        margin-bottom: 0;
+      }
+    }
+
+    &_content {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__text {
+    max-width: 280px;
+    color: #fff;
+    margin: 0 auto;
+  }
+
+  @include media(sm) {
+    flex-direction: column;
+    height: auto;
+  }
+}
+
+ul.slick-dots {
+  position: absolute;
+  margin-bottom: 0 !important;
+  line-height: 0;
+  bottom: 30px !important;
+  left: 50%;
+  transform: translateX(-50%);
+  button {
+    display: none;
+  }
+
+  li {
+    display: inline-block;
+    margin: 0;
+    padding: 0 !important;
+    height: 7px;
+    width: 7px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    margin-right: 10px;
+
+    &::after {
+      display: none !important;
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    &.slick-active {
+      background-color: #fff;
+    }
+  }
+}
